@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+    <script>
+    var names = ['swift', 'php', 'javascript', 'closure'];
+    var main = document.querySelector('#main');
+    document.addEventListener('DOMContentLoaded', eventCallback(2000, createTextElement, names));
+
+    function eventCallback(timeout, callback, callbackParam) {
+        setTimeout(callback, timeout, callbackParam);
+    }
+
+    function createTextElement(namesList) {
+        namesList.forEach(function(name){
+            var p = document.createElement('p');
+            p.innerText = name;
+            main.appendChild(p);
+        });
+    }
+    </script>
+</body>
+</html>
